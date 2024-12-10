@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-sqlalchemy
-pymysql
-bcrypt
-passlib
-pydantic[email]
