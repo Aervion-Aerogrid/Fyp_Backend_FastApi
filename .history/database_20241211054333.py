@@ -19,7 +19,8 @@ if is_running_in_docker():
     # Update this with your AWS RDS MySQL endpoint if running inside Docker
     URL_DATABASE = os.getenv("DATABASE_URL")
 else:
-    URL_DATABASE = os.getenv("DATABASE_URL")
+    URL_DATABASE = "mysql+pymysql://root:admin@localhost:3306/weather"
+    #os.getenv("DATABASE_URL")
     
     
 # Initialize SQLAlchemy engine and session

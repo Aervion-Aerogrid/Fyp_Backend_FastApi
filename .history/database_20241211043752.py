@@ -17,7 +17,7 @@ def is_running_in_docker():
 # Set the database URL based on environment
 if is_running_in_docker():
     # Update this with your AWS RDS MySQL endpoint if running inside Docker
-    URL_DATABASE = os.getenv("DATABASE_URL")
+    URL_DATABASE = "mysql+pymysql://aervion1_qasim:0123456789@aervion.com:3306/aervion1_weather"
 else:
     URL_DATABASE = os.getenv("DATABASE_URL")
     
@@ -25,6 +25,7 @@ else:
 # Initialize SQLAlchemy engine and session
 engine = create_engine(
     URL_DATABASE, 
+   
     pool_pre_ping=True   # Ensures connections are checked before use
 )# Adjust to your wait_timeout value
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
